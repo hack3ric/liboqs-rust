@@ -42,6 +42,7 @@ fn main() {
     let mut config = cmake::Config::new("liboqs");
     config.profile("Release");
     config.define("OQS_BUILD_ONLY_LIB", "Yes");
+    config.define("OQS_PERMIT_UNSUPPORTED_ARCHITECTURE", "Yes");
 
     if cfg!(feature = "non_portable") {
         // Build with CPU feature detection or just enable whatever is available for this CPU
